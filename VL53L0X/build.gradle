@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '4.0.3' apply false
+}
+
+// Define the main class for the application
+mainClassName = 'VL53L0X.App'
+
+apply plugin: 'com.github.johnrengelman.shadow'
+
+repositories {
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/groups/public" }
+
+    flatDir {
+        dirs '.'
+    }
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:27.0.1-jre'
+
+    compile 'com.pi4j:pi4j-core:1.2-SNAPSHOT'
+
+    compile name: 'I2C.SPI-1.0'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'VL53L0X.App'
+        )
+    }
+}
