@@ -11,7 +11,6 @@ apply plugin: 'com.github.johnrengelman.shadow'
 
 repositories {
     mavenCentral()
-    maven { url "https://oss.sonatype.org/content/groups/public" }
 
     flatDir {
         dirs '.'
@@ -21,7 +20,7 @@ repositories {
 dependencies {
     implementation 'com.google.guava:guava:27.0.1-jre'
 
-    compile 'com.pi4j:pi4j-core:1.2-SNAPSHOT'
+    compile 'com.pi4j:pi4j-core:1.2'
 
     compile name: 'I2C.SPI-1.0'
 }
